@@ -1,0 +1,60 @@
+﻿<Window x:Class="ImageProcessor.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"        
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="MainGrid" Background="#FF1E1E1E">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Name="originImage" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto" Margin="10,10,5,0" OpacityMask="Black"/>
+        <Image Name="processedImage" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto" Margin="5,10,10,0" OpacityMask="Black" MouseMove="ProcessedImage_MouseMove" MouseLeave="ProcessedImage_MouseLeave" MouseDown="Image_MouseDown" MouseUp="Image_MouseUp"/>
+        <StackPanel x:Name="imgProps" Grid.Column="1" HorizontalAlignment="Left" Height="140" Margin="10.2,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="377">
+            <TextBlock TextWrapping="Wrap" Text="File properties" FontWeight="Bold" Foreground="#FFFFFEFE"/>
+            <TextBlock x:Name="imgPropsExtension" TextWrapping="Wrap" Text="Extension:" Foreground="White"/>
+            <TextBlock x:Name="imgPropsHeight" TextWrapping="Wrap" Text="Height:" Foreground="White"/>
+            <TextBlock x:Name="imgPropsWidth" TextWrapping="Wrap" Text="Width:" Foreground="White"/>
+            <TextBlock TextWrapping="Wrap" Text="Coordinates" FontWeight="Bold" Foreground="White"/>
+            <TextBlock x:Name="imgPropsMouseX" TextWrapping="Wrap" Text="X:" Foreground="White"/>
+            <TextBlock x:Name="imgPropsMouseY" TextWrapping="Wrap" Text="Y:" Foreground="White"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="0" VerticalAlignment="Top">
+            <Button Content="Load File" Name="btnLoadFile" Click="BtnLoadFile_Click" Margin="0,0,0,0" Foreground="#FFF0EFF1" OpacityMask="Black" HorizontalAlignment="Stretch" VerticalAlignment="Top" FontWeight="Bold">
+                <Button.Background>
+                    <SolidColorBrush Color="#FF686868" Opacity="0.8"/>
+                </Button.Background>
+            </Button>
+            <Button Content="Clear" Click="Clean_Button_Click" Margin="0,0,0,0" Foreground="#FFF0EFF1" OpacityMask="Black" HorizontalAlignment="Stretch" VerticalAlignment="Top" FontWeight="Bold">
+                <Button.Background>
+                    <SolidColorBrush Color="#FF686868" Opacity="0.8"/>
+                </Button.Background>
+            </Button>
+            <ComboBox Name="filters" Margin="0,0,0,0" MinWidth="100" OpacityMask="Black" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                <ComboBox.Background>
+                    <SolidColorBrush Color="#FF595959" Opacity="0.8"/>
+                </ComboBox.Background>
+            </ComboBox>
+            <Button Content="Start processing" Click="Process_Button_Click" Margin="0,0,0,0" Foreground="#FFF0EFF1" OpacityMask="Black" HorizontalAlignment="Stretch" VerticalAlignment="Top" FontWeight="Bold">
+                <Button.Background>
+                    <SolidColorBrush Color="#FF686868" Opacity="0.8"/>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="2" VerticalAlignment="Top">
+            <Button Content="Proc Img Info" Name="btnProcImgInfo" Margin="0,10,0,0" Foreground="#FFF0EFF1" OpacityMask="Black" HorizontalAlignment="Stretch" VerticalAlignment="Top" FontWeight="Bold" Click="BtnProcImgInfo_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="#FF686868" Opacity="0.8"/>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+        <Button Content="Button" HorizontalAlignment="Left" Height="0" Margin="-264,227,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

@@ -1,0 +1,35 @@
+﻿<Window x:Class="ImageProcessor.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="MainGrid" Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Name="originImage" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto" MaxHeight="240" Margin="10,10,0,0" MaxWidth="377"/>
+        <Image Name="processedImage" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto" MaxHeight="240" Margin="10,10,0,0" MaxWidth="377"/>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="140" Margin="10.2,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="377">
+            <TextBlock TextWrapping="Wrap" Text="File properties" FontWeight="Bold"/>
+            <TextBlock TextWrapping="Wrap" Text="Extension:"/>
+            <TextBlock TextWrapping="Wrap" Text="Height:"/>
+            <TextBlock TextWrapping="Wrap" Text="Width:"/>
+            <TextBlock TextWrapping="Wrap" Text="Coordinates" FontWeight="Bold"/>
+            <TextBlock TextWrapping="Wrap" Text="X:"/>
+            <TextBlock TextWrapping="Wrap" Text="Y:"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="140" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="377" RenderTransformOrigin="0.986,0.407">
+            <Button Content="Load File" Name="btnLoadFile" Click="BtnLoadFile_Click"/>
+            <Button Content="Clear" Click="Clean_Button_Click"/>
+            <ComboBox Name="filters"></ComboBox>
+            <Button Content="Start processing" Click="Process_Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

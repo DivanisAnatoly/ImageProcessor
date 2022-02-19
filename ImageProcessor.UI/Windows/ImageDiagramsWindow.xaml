@@ -1,0 +1,25 @@
+﻿<Window x:Class="ImageProcessor.UI.Windows.ImageDiagramsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImageProcessor.UI.Windows"
+        xmlns:views="clr-namespace:ImageProcessor.UI.Views"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        mc:Ignorable="d"
+        Title="ImageDiagramsWindow" Height="600" Width="800">
+    <Grid x:Name="myDataGrid"  Background="#FF1E1E1E">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <views:ImageBrightnessHistogramView Margin="5" DataContext="{Binding ImageBrightnessHistogramViewModel}"/>
+        <views:ImageBrightnessHistogramView Grid.Row="1" Margin="5" DataContext="{Binding RImgBrightHistogramVM}" />
+        <views:ImageBrightnessHistogramView Grid.Row="2" Margin="5" DataContext="{Binding GImgBrightHistogramVM}" />
+        <views:ImageBrightnessHistogramView Grid.Row="3" Margin="5" DataContext="{Binding BImgBrightHistogramVM}" />
+        <views:BrightnessProfileLineGraphView x:Name="VProfileGraph" Grid.Row="4" Margin="5" DataContext="{Binding BrightnessProfileLineGraphVM}" />
+    </Grid>
+</Window>
